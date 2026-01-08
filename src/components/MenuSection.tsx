@@ -94,6 +94,7 @@ const MenuSection = () => {
                       src={category.image}
                       alt={category.name}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                     
                     {/* Steam/Smoke Overlay */}

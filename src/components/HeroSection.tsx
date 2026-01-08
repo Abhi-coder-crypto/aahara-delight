@@ -14,6 +14,7 @@ const HeroSection = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
