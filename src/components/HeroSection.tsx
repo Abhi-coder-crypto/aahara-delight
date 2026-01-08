@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 sm:pt-20">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading */}
-          <h1 className="font-display text-3xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
             <span className="text-primary italic">A Celebration of</span>
             <span className="block mt-1 sm:mt-2">Pure Vegetarian Flavours</span>
           </h1>
