@@ -4,18 +4,11 @@ import { useState } from 'react';
 
 const menuCategories = [
   { 
-    name: 'Soups', 
-    image: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg',
-    rawImage: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg', // Placeholder for raw
-    price: '₹149',
-    description: 'Fresh seasonal vegetables simmered to perfection.'
-  },
-  { 
-    name: 'Appetizers', 
-    image: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
-    rawImage: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
-    price: '₹179',
-    description: 'Crispy starters with a burst of flavor.'
+    name: 'Sushi', 
+    image: '/attached_assets/stock_images/premium_vegetarian_s_f582cd3b.jpg',
+    rawImage: '/attached_assets/stock_images/premium_vegetarian_s_f582cd3b.jpg',
+    price: '₹399',
+    description: 'Our signature vegetarian sushi platter.'
   },
   { 
     name: 'Main Course', 
@@ -71,7 +64,7 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
