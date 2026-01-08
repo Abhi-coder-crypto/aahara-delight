@@ -13,7 +13,7 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
@@ -25,8 +25,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Subtle overlay for text readability without being a full "tint" */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* Stronger overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Floating Decorative Elements */}
       <div className="absolute top-20 right-10 text-6xl opacity-20 animate-float">🌿</div>
