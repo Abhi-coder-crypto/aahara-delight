@@ -111,9 +111,9 @@ const TestimonialsSection = () => {
                     key={testimonial.name}
                     className={`absolute top-0 left-0 w-full transition-all duration-700 ease-in-out ${positionClass}`}
                   >
-                    <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-2xl relative overflow-hidden border border-leaf/5">
-                      <div className="absolute top-0 right-0 p-8 text-leaf/10">
-                        <Quote className="w-24 h-24 rotate-180" />
+                    <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
+                      <div className="absolute top-0 right-0 p-6 text-leaf/10">
+                        <Quote className="w-20 h-20 rotate-180" />
                       </div>
                       
                       <div className="flex gap-1 mb-6">
@@ -122,7 +122,7 @@ const TestimonialsSection = () => {
                         ))}
                       </div>
 
-                      <p className="text-xl md:text-2xl text-foreground font-medium mb-10 leading-relaxed italic">
+                      <p className="text-lg md:text-xl text-foreground font-medium mb-6 leading-relaxed italic">
                         "{testimonial.text}"
                       </p>
 
