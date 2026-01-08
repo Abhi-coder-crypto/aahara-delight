@@ -36,17 +36,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Logo */}
-          <div className="flex justify-center animate-fade-up">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-gold border-4 border-champagne/30 animate-float">
-              <img 
-                src={logo} 
-                alt="Aahara Logo" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-champagne/20 backdrop-blur-sm border border-champagne/30 rounded-full px-5 py-2 animate-fade-up animation-delay-100">
             <Sparkles className="w-4 h-4 text-champagne" />

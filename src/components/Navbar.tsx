@@ -32,10 +32,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#home" className="flex items-center group">
-            <div className={`rounded-full overflow-hidden shadow-soft group-hover:shadow-hover transition-all duration-300 ${isScrolled ? 'w-14 h-14' : 'w-16 h-16'}`}>
+          <a href="#home" className="flex items-center group flex-shrink-0">
+            <div className={`rounded-full overflow-hidden shadow-soft group-hover:shadow-hover transition-all duration-300 ${isScrolled ? 'w-16 h-16' : 'w-20 h-20'}`}>
               <img 
                 src={logo} 
                 alt="Aahara - Multi Cuisine Restaurant" 
@@ -45,7 +45,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 ml-auto mr-12">
             {navLinks.map((link) => (
               <a
                 key={link.name}
