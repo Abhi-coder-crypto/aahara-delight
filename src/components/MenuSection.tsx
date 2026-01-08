@@ -7,35 +7,35 @@ const menuCategories = [
     name: 'Soups', 
     image: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg',
     rawImage: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg', // Placeholder for raw
-    price: '₹180',
+    price: '₹149',
     description: 'Fresh seasonal vegetables simmered to perfection.'
   },
   { 
     name: 'Appetizers', 
     image: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
     rawImage: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
-    price: '₹250',
+    price: '₹179',
     description: 'Crispy starters with a burst of flavor.'
   },
   { 
     name: 'Main Course', 
     image: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
     rawImage: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
-    price: '₹350',
+    price: '₹399',
     description: 'Hearty vegetarian delights from our chef.'
   },
   { 
     name: 'Pastas', 
     image: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg',
     rawImage: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg',
-    price: '₹280',
+    price: '₹269',
     description: 'Authentic Italian flavors with fresh herbs.'
   },
   { 
     name: 'Pizza', 
     image: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg',
     rawImage: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg',
-    price: '₹320',
+    price: '₹259',
     description: 'Thin crust with garden-fresh toppings.'
   },
 ];
