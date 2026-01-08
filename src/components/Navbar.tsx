@@ -45,13 +45,13 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 ml-auto mr-12">
+          <div className="hidden md:flex items-center gap-8 ml-auto mr-32">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-medium text-sm transition-all duration-300 hover:text-champagne relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-champagne after:transition-all after:duration-300 hover:after:w-full ${
-                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                className={`font-medium text-sm transition-all duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                  isScrolled ? 'text-primary' : 'text-primary'
                 }`}
               >
                 {link.name}
