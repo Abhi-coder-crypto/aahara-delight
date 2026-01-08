@@ -53,11 +53,6 @@ const HeroSection = () => {
             Multi-Cuisine • Fresh • Pure Veg
           </p>
 
-          <p className="text-primary-foreground/60 text-base max-w-xl mx-auto animate-fade-up animation-delay-200">
-            Experience the art of vegetarian dining where every dish tells a story of fresh ingredients, 
-            authentic flavors, and the warmth of home.
-          </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-up animation-delay-300">
             <Button variant="hero" size="xl" asChild>
