@@ -19,7 +19,7 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer className="bg-[#7CB342] text-[#fdfcf0] overflow-hidden">
-      <div className="container-custom mx-auto section-padding pb-8">
+      <div className="container-custom mx-auto px-6 sm:px-12 lg:px-16 py-16 md:py-24 pb-8">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
