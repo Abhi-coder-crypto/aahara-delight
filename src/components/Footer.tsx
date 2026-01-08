@@ -46,9 +46,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed">
-              Experience the art of vegetarian dining where every dish tells a story of 
-              fresh ingredients, authentic flavors, and the warmth of home. Join us for 
-              a culinary journey around the world.
+              Shop No.04, GNP Arcadia, opp. to Pendharkar College, Sudarshan Nagar, Dombivli East, Maharashtra 421203
             </p>
             
             {/* Social Links */}

@@ -10,7 +10,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    content: '123 Garden Street, Food Lane\nBangalore, Karnataka 560001',
+    content: 'Shop No.04, GNP Arcadia,\nopp. to Pendharkar College,\nSudarshan Nagar, Dombivli East,\nMaharashtra 421203',
   },
   {
     icon: Phone,
@@ -97,7 +97,7 @@ const ContactSection = () => {
             {/* Map Embed */}
             <div className="relative rounded-2xl overflow-hidden shadow-card h-[300px] lg:h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0160394825776!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.434771960207!2d73.1009121!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

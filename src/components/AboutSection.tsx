@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { Leaf, Heart, Utensils, Sparkles, Users, ShieldCheck } from 'lucide-react';
 
 const highlights = [
-  { icon: Leaf, text: '100% Pure Veg', color: 'text-leaf' },
-  { icon: Utensils, text: 'Multi Cuisine', color: 'text-champagne' },
-  { icon: Users, text: 'Family Friendly', color: 'text-leaf' },
-  { icon: ShieldCheck, text: 'Hygienic & Fresh', color: 'text-champagne' },
+  { icon: Leaf, text: '100% Pure Veg', color: 'bg-green-50 text-green-600' },
+  { icon: Utensils, text: 'Multi Cuisine', color: 'bg-orange-50 text-orange-600' },
+  { icon: Users, text: 'Family Friendly', color: 'bg-green-50 text-green-600' },
+  { icon: ShieldCheck, text: 'Hygienic & Fresh', color: 'bg-orange-50 text-orange-600' },
 ];
 
 const AboutSection = () => {
@@ -97,12 +97,12 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-3 p-4 bg-background rounded-xl shadow-soft hover:shadow-hover transition-shadow duration-300 group"
+                  className="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all duration-300 group border border-leaf/5"
                 >
-                  <div className={`w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color}`}>
-                    <item.icon className="w-5 h-5" />
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color} shadow-sm`}>
+                    <item.icon className="w-6 h-6" />
                   </div>
-                  <span className="font-medium text-foreground text-sm">{item.text}</span>
+                  <span className="font-semibold text-foreground text-sm tracking-tight">{item.text}</span>
                 </motion.div>
               ))}
             </div>
