@@ -6,13 +6,10 @@ import dishPizza from '@/assets/dish-pizza.jpg';
 import dishThali from '@/assets/dish-thali.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
 
-const galleryImages = [
-  { src: foodVariety, alt: 'Variety of dishes', span: 'col-span-2 row-span-2' },
-  { src: dishPasta, alt: 'Fresh pasta', span: 'col-span-1 row-span-1' },
-  { src: dishPizza, alt: 'Vegetarian pizza', span: 'col-span-1 row-span-1' },
-  { src: restaurantInterior, alt: 'Restaurant ambiance', span: 'col-span-1 row-span-2' },
-  { src: dishThali, alt: 'Indian thali', span: 'col-span-1 row-span-1' },
-  { src: heroBg, alt: 'Plated dishes', span: 'col-span-1 row-span-1' },
+const galleryVideos = [
+  { src: '/videos/video1.mp4', alt: 'Restaurant Celebration' },
+  { src: '/videos/video2.mp4', alt: 'Food Experience' },
+  { src: '/videos/video3.mp4', alt: 'Kitchen Art' },
 ];
 
 const GallerySection = () => {
@@ -33,27 +30,30 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-          {galleryImages.map((image, index) => (
+        {/* Video Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {galleryVideos.map((video, index) => (
             <div
               key={index}
-              className={`relative rounded-2xl overflow-hidden shadow-card group cursor-pointer animate-fade-up ${image.span}`}
+              className="relative rounded-3xl overflow-hidden shadow-card group animate-fade-up aspect-[9/16]"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              <video
+                src={video.src}
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-leaf-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               {/* Caption */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <p className="text-primary-foreground font-medium text-sm">
-                  {image.alt}
+              <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-primary-foreground font-medium text-lg">
+                  {video.alt}
                 </p>
               </div>
             </div>
