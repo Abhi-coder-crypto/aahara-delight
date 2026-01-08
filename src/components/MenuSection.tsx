@@ -71,11 +71,11 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
-              className="perspective-1000 h-[350px] sm:h-[400px]"
+              className="perspective-1000 h-[300px] sm:h-[400px]"
               onMouseEnter={() => {
                 setHoveredIndex(index);
                 playSizzle();
@@ -93,10 +93,10 @@ const MenuSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 animate={hoveredIndex === index ? { rotateY: 180 } : { rotateY: 0 }}
                 style={{ transformStyle: 'preserve-3d' }}
-                className="group relative h-[400px] cursor-pointer"
+                className="group relative h-full cursor-pointer"
               >
                 {/* Front Side: Cooking Animation */}
-                <div className="absolute inset-0 backface-hidden rounded-3xl overflow-hidden shadow-card">
+                <div className="absolute inset-0 backface-hidden rounded-2xl sm:rounded-3xl overflow-hidden shadow-card">
                   <motion.div 
                     className="relative w-full h-full"
                     animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
@@ -120,13 +120,13 @@ const MenuSection = () => {
                           <div className="absolute inset-0 flex items-center justify-center">
                             <motion.div
                               animate={{ 
-                                y: [-20, -100], 
+                                y: [-10, -50], 
                                 opacity: [0, 1, 0],
-                                scale: [1, 1.5]
+                                scale: [1, 1.2]
                               }}
                               transition={{ duration: 2, repeat: Infinity }}
                             >
-                              <Flame className="w-12 h-12 text-white/50 blur-sm" />
+                              <Flame className="w-8 h-8 sm:w-12 sm:h-12 text-white/50 blur-sm" />
                             </motion.div>
                           </div>
                         </motion.div>
@@ -135,13 +135,13 @@ const MenuSection = () => {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     
-                    <div className="absolute inset-0 flex flex-col items-center justify-end p-6">
-                      <h3 className="font-display text-2xl text-white font-bold tracking-wide">
+                    <div className="absolute inset-0 flex flex-col items-center justify-end p-4 sm:p-6 text-center">
+                      <h3 className="font-display text-lg sm:text-2xl text-white font-bold tracking-wide leading-tight">
                         {category.name}
                       </h3>
                       {/* Elastic Price Tag */}
                       <motion.div
-                        className="bg-[#7CB342] text-white px-3 py-1 rounded-full text-sm font-bold mt-2"
+                        className="bg-[#7CB342] text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold mt-1 sm:mt-2"
                         animate={hoveredIndex === index ? {
                           scale: [1, 1.2, 1],
                           rotate: [0, 5, -5, 0]
@@ -156,18 +156,18 @@ const MenuSection = () => {
 
                 {/* Back Side: Chef Toss Flip */}
                 <div 
-                  className="absolute inset-0 backface-hidden rounded-3xl overflow-hidden bg-[#7CB342] p-8 flex flex-col justify-center items-center text-center text-white"
+                  className="absolute inset-0 backface-hidden rounded-2xl sm:rounded-3xl overflow-hidden bg-[#7CB342] p-4 sm:p-8 flex flex-col justify-center items-center text-center text-white"
                   style={{ transform: 'rotateY(180deg)' }}
                 >
                   <motion.div
-                    animate={hoveredIndex === index ? { y: [0, -20, 0] } : {}}
+                    animate={hoveredIndex === index ? { y: [0, -10, 0] } : {}}
                     transition={{ duration: 0.5, repeat: Infinity }}
                   >
-                    <ChefHat className="w-12 h-12 mb-4" />
+                    <ChefHat className="w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-4" />
                   </motion.div>
-                  <h3 className="font-display text-2xl font-bold mb-2">{category.name}</h3>
-                  <p className="text-white/90 text-sm">{category.description}</p>
-                  <div className="mt-6 font-bold text-xl tracking-wider">{category.price}</div>
+                  <h3 className="font-display text-lg sm:text-2xl font-bold mb-1 sm:mb-2">{category.name}</h3>
+                  <p className="text-white/90 text-[10px] sm:text-sm line-clamp-3 sm:line-clamp-none">{category.description}</p>
+                  <div className="mt-2 sm:mt-6 font-bold text-sm sm:text-xl tracking-wider">{category.price}</div>
                 </div>
               </motion.div>
             </div>

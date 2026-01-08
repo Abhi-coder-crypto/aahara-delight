@@ -94,45 +94,45 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Right Side: Carousel */}
-          <div className="lg:w-2/3 relative h-[450px] w-full flex items-center justify-center -mt-12 lg:-mt-20">
-            <div className="relative w-full max-w-xl perspective-1000">
+          <div className="lg:w-2/3 relative h-[380px] sm:h-[450px] w-full flex items-center justify-center -mt-8 sm:-mt-12 lg:-mt-20">
+            <div className="relative w-full max-w-xl perspective-1000 px-4 sm:px-0">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === currentIndex;
                 const isNext = index === (currentIndex + 1) % testimonials.length;
                 const isPrev = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
                 
-                let positionClass = "opacity-0 scale-90 translate-x-0";
-                if (isActive) positionClass = "opacity-100 scale-100 z-30 translate-x-0";
-                if (isNext) positionClass = "opacity-40 scale-90 z-20 translate-x-32 hidden md:block";
-                if (isPrev) positionClass = "opacity-40 scale-90 z-20 -translate-x-32 hidden md:block";
+                let positionClass = "opacity-0 scale-90 translate-x-0 pointer-events-none";
+                if (isActive) positionClass = "opacity-100 scale-100 z-30 translate-x-0 pointer-events-auto";
+                if (isNext) positionClass = "opacity-0 md:opacity-40 scale-90 z-20 translate-x-32 hidden md:block";
+                if (isPrev) positionClass = "opacity-0 md:opacity-40 scale-90 z-20 -translate-x-32 hidden md:block";
 
                 return (
                   <motion.div
                     key={testimonial.name}
                     className={`absolute top-0 left-0 w-full transition-all duration-700 ease-in-out ${positionClass}`}
                   >
-                    <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
-                      <div className="absolute top-0 right-0 p-6 text-leaf/10">
-                        <Quote className="w-20 h-20 rotate-180" />
+                    <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
+                      <div className="absolute top-0 right-0 p-4 sm:p-6 text-leaf/10">
+                        <Quote className="w-16 h-16 sm:w-20 sm:h-20 rotate-180" />
                       </div>
                       
-                      <div className="flex gap-1 mb-6">
+                      <div className="flex gap-1 mb-4 sm:mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-6 h-6 fill-champagne text-champagne" />
+                          <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-champagne text-champagne" />
                         ))}
                       </div>
 
-                      <p className="text-lg md:text-xl text-foreground font-medium mb-6 leading-relaxed italic">
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-medium mb-4 sm:mb-6 leading-relaxed italic">
                         "{testimonial.text}"
                       </p>
 
-                      <div className="flex items-center gap-5">
-                        <div className="w-16 h-16 rounded-2xl bg-leaf/10 flex items-center justify-center text-leaf font-bold text-2xl shadow-inner">
+                      <div className="flex items-center gap-3 sm:gap-5">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-leaf/10 flex items-center justify-center text-leaf font-bold text-xl sm:text-2xl shadow-inner">
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-foreground">{testimonial.name}</h4>
-                          <p className="text-leaf font-medium text-sm">{testimonial.role}</p>
+                          <h4 className="text-lg sm:text-xl font-bold text-foreground">{testimonial.name}</h4>
+                          <p className="text-leaf font-medium text-xs sm:text-sm">{testimonial.role}</p>
                         </div>
                       </div>
                     </div>
