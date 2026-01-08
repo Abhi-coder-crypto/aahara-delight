@@ -19,7 +19,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-leaf-dark text-primary-foreground overflow-hidden">
+    <footer className="bg-[#7CB342] text-primary-foreground overflow-hidden">
       <div className="container-custom mx-auto section-padding pb-8">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
