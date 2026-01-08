@@ -1,5 +1,4 @@
 import { Leaf, Heart, Utensils, Sparkles, Users, ShieldCheck } from 'lucide-react';
-import restaurantInterior from '@/assets/restaurant-interior.jpg';
 
 const highlights = [
   { icon: Leaf, text: '100% Pure Veg', color: 'text-leaf' },
@@ -17,8 +16,8 @@ const AboutSection = () => {
           <div className="relative animate-fade-up">
             <div className="relative rounded-3xl overflow-hidden shadow-card">
               <img
-                src={restaurantInterior}
-                alt="Aahara Restaurant Interior"
+                src="/about-biryani.jpg"
+                alt="Aahara Veg Biryani"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-leaf-dark/30 to-transparent" />
