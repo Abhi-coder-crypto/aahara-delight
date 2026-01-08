@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Leaf, Instagram, Facebook, Twitter, Youtube, Heart } from 'lucide-react';
-import logo from '@/assets/logo.jpg';
+import logo from '@/assets/logo.png';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },

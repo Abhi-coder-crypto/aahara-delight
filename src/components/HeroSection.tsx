@@ -1,6 +1,6 @@
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
-import logo from '@/assets/logo.jpg';
+import logo from '@/assets/logo.png';
 import heroVideo from '@assets/hero_video.mp4';
 
 const HeroSection = () => {
