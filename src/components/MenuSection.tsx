@@ -9,7 +9,7 @@ const menuCategories = [
   { name: 'Pizza', image: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg' },
   { name: 'Thali', image: '/attached_assets/stock_images/indian_thali_pure_ve_ade217ca.jpg' },
   { name: 'Sushi', image: '/attached_assets/stock_images/vegetarian_sushi_pla_c23ae6d7.jpg' },
-  { name: 'Snacks', image: '/attached_assets/stock_images/indian_street_food_s_aad51677.jpg' },
+  { name: 'Snacks', image: '/attached_assets/stock_images/crispy_indian_street_e40bf0c9.jpg' },
   { name: 'Mocktails', image: '/attached_assets/stock_images/fruit_mocktail_bever_085db329.jpg' },
   { name: 'Desserts', image: '/attached_assets/stock_images/gourmet_dessert_vege_71097217.jpg' },
 ];
