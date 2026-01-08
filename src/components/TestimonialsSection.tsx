@@ -40,15 +40,15 @@ const TestimonialsSection = () => {
   }, [nextSlide]);
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-leaf/5 -skew-x-12 transform origin-top-right" />
       <div className="absolute bottom-10 left-10 text-9xl opacity-5 select-none">🌿</div>
       
-      <div className="container-custom mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="container-custom mx-auto relative z-10 px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-16">
           {/* Left Side: Content */}
-          <div className="lg:w-1/3 space-y-6 text-center lg:text-left">
+          <div className="lg:w-1/3 space-y-4 sm:space-y-6 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -94,8 +94,8 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Right Side: Carousel */}
-          <div className="lg:w-2/3 relative h-[380px] sm:h-[450px] w-full flex items-center justify-center -mt-8 sm:-mt-12 lg:-mt-20">
-            <div className="relative w-full max-w-lg perspective-1000 px-4 sm:px-0">
+          <div className="lg:w-2/3 relative h-[340px] sm:h-[450px] w-full flex items-center justify-center mt-4 sm:-mt-12 lg:-mt-20">
+            <div className="relative w-full max-w-lg perspective-1000">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === currentIndex;
                 const isNext = index === (currentIndex + 1) % testimonials.length;
