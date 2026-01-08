@@ -42,7 +42,7 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 animate-fade-up animation-delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 animate-fade-up animation-delay-300 w-full max-w-[280px] sm:max-w-none mx-auto">
             <Button variant="hero" size="lg" className="w-full sm:w-auto px-10" asChild>
               <a href="#menu">View Menu</a>
             </Button>
