@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/40 backdrop-blur-md py-2'
+          ? 'bg-black/60 backdrop-blur-md py-2'
           : 'bg-transparent py-4'
       }`}
     >
@@ -51,7 +51,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`font-medium text-sm transition-all duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                  isScrolled ? 'text-primary' : 'text-primary'
+                  isScrolled ? 'text-white' : 'text-white'
                 }`}
               >
                 {link.name}
