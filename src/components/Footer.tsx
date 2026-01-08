@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#7CB342] text-black overflow-hidden">
+    <footer className="bg-[#7CB342] text-[#fdfcf0] overflow-hidden">
       <div className="container-custom mx-auto section-padding pb-8">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full overflow-hidden shadow-gold border-2 border-black/30">
+              <div className="w-16 h-16 rounded-full overflow-hidden shadow-gold border-2 border-white/20">
                 <img 
                   src={logo} 
                   alt="Aahara Logo" 
@@ -39,12 +39,12 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold">Aahara</h3>
-                <p className="text-xs text-black/80 uppercase tracking-wider">
+                <p className="text-xs text-[#fdfcf0]/80 uppercase tracking-wider">
                   Pure Veg Multi Cuisine • Est. 2024
                 </p>
               </div>
             </div>
-            <p className="text-black/90 max-w-md leading-relaxed">
+            <p className="text-[#fdfcf0]/90 max-w-md leading-relaxed">
               Shop No.04, GNP Arcadia, opp. to Pendharkar College, Sudarshan Nagar, Dombivli East, Maharashtra 421203
             </p>
             
@@ -56,7 +56,7 @@ const Footer = () => {
                   href={social.href}
                   aria-label={social.label}
                   whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-10 h-10 rounded-lg bg-black/10 flex items-center justify-center hover:bg-black hover:text-[#7CB342] transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#fdfcf0] hover:text-[#7CB342] transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -66,7 +66,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6 text-black">
+            <h4 className="font-display text-lg font-semibold mb-6 text-[#fdfcf0]">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -74,9 +74,9 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-black/80 hover:text-black transition-colors duration-300 flex items-center gap-2"
+                    className="text-[#fdfcf0]/80 hover:text-[#fdfcf0] transition-colors duration-300 flex items-center gap-2"
                   >
-                    <span className="w-1 h-1 bg-black/50 rounded-full" />
+                    <span className="w-1 h-1 bg-[#fdfcf0]/50 rounded-full" />
                     {link.name}
                   </a>
                 </li>
@@ -86,29 +86,29 @@ const Footer = () => {
 
           {/* Opening Hours */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6 text-black">
+            <h4 className="font-display text-lg font-semibold mb-6 text-[#fdfcf0]">
               Opening Hours
             </h4>
-            <ul className="space-y-3 text-black/80">
+            <ul className="space-y-3 text-[#fdfcf0]/80">
               <li className="flex justify-between">
                 <span>Monday - Friday</span>
-                <span className="text-black">11 AM - 11 PM</span>
+                <span className="text-[#fdfcf0]">11 AM - 11 PM</span>
               </li>
               <li className="flex justify-between">
                 <span>Saturday</span>
-                <span className="text-black">10 AM - 12 AM</span>
+                <span className="text-[#fdfcf0]">10 AM - 12 AM</span>
               </li>
               <li className="flex justify-between">
                 <span>Sunday</span>
-                <span className="text-black">10 AM - 11 PM</span>
+                <span className="text-[#fdfcf0]">10 AM - 11 PM</span>
               </li>
             </ul>
             
-            <div className="mt-6 p-4 bg-black/10 rounded-xl border border-black/20">
-              <p className="text-sm text-black font-medium">
+            <div className="mt-6 p-4 bg-white/10 rounded-xl border border-white/20">
+              <p className="text-sm text-[#fdfcf0] font-medium">
                 🎉 Special Weekend Brunch
               </p>
-              <p className="text-xs text-black/80 mt-1">
+              <p className="text-xs text-[#fdfcf0]/80 mt-1">
                 Saturdays & Sundays, 10 AM - 1 PM
               </p>
             </div>
@@ -120,10 +120,10 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-black/10"
+          className="pt-8 border-t border-white/10"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-black/60 text-sm">
+            <p className="text-[#fdfcf0]/60 text-sm">
               © 2024 Aahara – Pure Veg Multi Cuisine. All rights reserved.
             </p>
           </div>
