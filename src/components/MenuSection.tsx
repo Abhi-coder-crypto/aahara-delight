@@ -38,7 +38,7 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6">
           {menuCategories.map((category, index) => (
             <motion.div
               key={category.name}
@@ -47,7 +47,7 @@ const MenuSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative bg-card rounded-3xl shadow-card overflow-hidden cursor-pointer"
+              className="group relative bg-card rounded-2xl sm:rounded-3xl shadow-card overflow-hidden cursor-pointer"
             >
               <div className="aspect-[4/5] relative">
                 <img
@@ -57,14 +57,14 @@ const MenuSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 
-                <div className="absolute inset-0 flex flex-col items-center justify-end p-6">
+                <div className="absolute inset-0 flex flex-col items-center justify-end p-4 sm:p-6">
                   <motion.h3 
-                    className="font-display text-2xl text-white font-bold tracking-wide"
+                    className="font-display text-lg sm:text-2xl text-white font-bold tracking-wide"
                     whileHover={{ scale: 1.1 }}
                   >
                     {category.name}
                   </motion.h3>
-                  <div className="w-12 h-1 bg-leaf mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-leaf mt-1 sm:mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </div>
               </div>
             </motion.div>

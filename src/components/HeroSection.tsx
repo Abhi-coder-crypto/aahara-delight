@@ -43,9 +43,9 @@ const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
             <span className="text-primary italic">A Celebration of</span>
-            <span className="block mt-2">Pure Vegetarian Flavours</span>
+            <span className="block mt-1 sm:mt-2">Pure Vegetarian Flavours</span>
           </h1>
 
           {/* Subtitle */}
