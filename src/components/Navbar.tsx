@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <a href="#home" className="flex items-center group flex-shrink-0">
-            <div className={`rounded-full overflow-hidden shadow-soft group-hover:shadow-hover transition-all duration-300 ${isScrolled ? 'w-16 h-16' : 'w-20 h-20'}`}>
+            <div className={`rounded-full overflow-hidden shadow-soft group-hover:shadow-hover transition-all duration-300 ${isScrolled ? 'w-20 h-20' : 'w-28 h-28'}`}>
               <img 
                 src={logo} 
                 alt="Aahara - Multi Cuisine Restaurant" 
