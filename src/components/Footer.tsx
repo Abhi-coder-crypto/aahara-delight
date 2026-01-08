@@ -19,7 +19,7 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer className="bg-[#7CB342] text-[#fdfcf0] overflow-hidden">
-      <div className="container-custom mx-auto px-6 sm:px-12 lg:px-16 py-16 md:py-24 pb-8">
+      <div className="container-custom mx-auto px-6 sm:px-12 lg:px-16 py-8 md:py-12 pb-6">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-white/10"
+          className="pt-4 border-t border-white/10"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#fdfcf0]/60 text-sm">
