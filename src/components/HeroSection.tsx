@@ -1,13 +1,22 @@
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from '@/assets/logo.png';
+import heroVideo from '@assets/generated_videos/cinematic_restaurant_interior_with_ambient_lighting.mp4';
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background Placeholder - Replace with your video */}
+      {/* Video Background */}
       <div className="absolute inset-0 bg-leaf-dark">
-        {/* When you have the video file, it will play here */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-leaf-dark/60 via-leaf-dark/50 to-leaf-dark/80" />
         
         {/* Animated background pattern as placeholder */}
