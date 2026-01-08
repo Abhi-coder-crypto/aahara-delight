@@ -17,6 +17,8 @@ const HeroSection = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
+        {/* Subtle Tint Overlay */}
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       {/* Floating Decorative Elements */}
