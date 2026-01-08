@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { Leaf, Heart, Utensils, Sparkles, Users, ShieldCheck } from 'lucide-react';
 
 const highlights = [
-  { icon: Leaf, text: '100% Pure Veg', color: 'bg-green-50 text-green-600' },
-  { icon: Utensils, text: 'Multi Cuisine', color: 'bg-orange-50 text-orange-600' },
-  { icon: Users, text: 'Family Friendly', color: 'bg-green-50 text-green-600' },
-  { icon: ShieldCheck, text: 'Hygienic & Fresh', color: 'bg-orange-50 text-orange-600' },
+  { icon: "/assets/veg-icon.png", text: '100% Pure Veg', color: 'bg-green-50' },
+  { icon: "/assets/cuisine-icon.png", text: 'Multi Cuisine', color: 'bg-orange-50' },
+  { icon: "/assets/family-icon.png", text: 'Family Friendly', color: 'bg-green-50' },
+  { icon: "/assets/hygiene-icon.png", text: 'Hygienic & Fresh', color: 'bg-orange-50' },
 ];
 
 const AboutSection = () => {
@@ -99,8 +99,8 @@ const AboutSection = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all duration-300 group border border-leaf/5"
                 >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color} shadow-sm`}>
-                    <item.icon className="w-6 h-6" />
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color} shadow-sm overflow-hidden`}>
+                    <img src={item.icon} alt={item.text} className="w-8 h-8 object-contain" />
                   </div>
                   <span className="font-semibold text-foreground text-sm tracking-tight">{item.text}</span>
                 </motion.div>

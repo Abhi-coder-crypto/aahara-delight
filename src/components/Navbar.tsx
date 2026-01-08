@@ -45,7 +45,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12 mr-auto ml-auto">
+          <div className="hidden md:flex items-center gap-12 ml-auto">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -57,6 +57,9 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+          </div>
+
+          <div className="hidden md:block ml-8">
             <Button variant="gold" size="sm" asChild>
               <a href="#contact">Book a Table</a>
             </Button>
