@@ -53,9 +53,9 @@ const HeroSection = () => {
             {['100% Pure Veg 🌿', 'Multi Cuisine', 'Fresh & Hygienic'].map((item) => (
               <span
                 key={item}
-                className="text-primary font-medium text-sm flex items-center gap-2"
+                className="text-white font-bold text-lg flex items-center gap-2 drop-shadow-md bg-black/20 px-4 py-1 rounded-full backdrop-blur-sm"
               >
-                <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                <span className="w-2 h-2 bg-[#7CB342] rounded-full" />
                 {item}
               </span>
             ))}
