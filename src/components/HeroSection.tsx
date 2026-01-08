@@ -44,7 +44,7 @@ const HeroSection = () => {
 
           {/* Main Heading */}
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
-            <span className="text-champagne italic">A Celebration of</span>
+            <span className="text-primary italic">A Celebration of</span>
             <span className="block mt-2">Pure Vegetarian Flavours</span>
           </h1>
 
@@ -68,9 +68,9 @@ const HeroSection = () => {
             {['100% Pure Veg 🌿', 'Multi Cuisine', 'Fresh & Hygienic'].map((item) => (
               <span
                 key={item}
-                className="text-primary-foreground/70 text-sm flex items-center gap-2"
+                className="text-primary font-medium text-sm flex items-center gap-2"
               >
-                <span className="w-1.5 h-1.5 bg-champagne rounded-full" />
+                <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                 {item}
               </span>
             ))}
