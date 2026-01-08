@@ -23,11 +23,11 @@ const AboutSection = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-card">
               <img
-                src="/about-biryani.jpg"
-                alt="Aahara Veg Biryani"
+                src="/attached_assets/2025-04-28_1767853804006.jpg"
+                alt="Aahara Restaurant Interior"
                 className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-leaf-dark/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             
             {/* Floating Card */}
