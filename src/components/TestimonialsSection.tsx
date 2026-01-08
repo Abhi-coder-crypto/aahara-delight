@@ -4,34 +4,22 @@ import { useState, useEffect, useCallback } from 'react';
 
 const testimonials = [
   {
-    name: 'Priya S.',
-    text: 'Aahara is a blessing for pure veg lovers! The food is fresh, flavorful, and beautifully presented. The ambience is calm and classy.',
+    name: 'Kavita Salian',
+    text: 'Delicious food, quick service, reasonable price, & nice experience. We ordered Veg Lemon coriander soup, kurkure momos, veg crispy, masala papad, manchurian rice & Ramen noodles. All were very tasty. Ramen was the best.',
     rating: 5,
-    role: 'Local Guide',
+    role: 'Dinner | ₹400–600',
   },
   {
-    name: 'Rahul M.',
-    text: 'From Indian thali to pizzas and mocktails, everything tasted amazing. Finally, a pure veg multi-cuisine restaurant done right!',
+    name: 'Yash Jadhav',
+    text: 'Delicious vegetarian food! The Mushroom Croquettes were crispy, flavorful, and a must-try. Other dishes were equally fresh and tasty. Highly recommend this place!',
     rating: 5,
-    role: 'Food Blogger',
+    role: 'Dinner | ₹400–600',
   },
   {
-    name: 'Anita P.',
-    text: 'The best vegetarian restaurant in town! Every dish is crafted with love. The paneer tikka and pasta are absolutely divine.',
+    name: 'Namrata Mahajan',
+    text: 'Very good ambience, tasty delicious japanese food, pot rice, staff and owner are warm welcome.',
     rating: 5,
-    role: 'Regular Guest',
-  },
-  {
-    name: 'Vikram R.',
-    text: 'Incredible variety! I brought my non-vegetarian friends and they were blown away by the taste and quality. Highly recommended.',
-    rating: 5,
-    role: 'Verified Customer',
-  },
-  {
-    name: 'Sneha K.',
-    text: 'Perfect for family dinners. The staff is courteous, the service is fast, and the food is consistently delicious. 5 stars!',
-    rating: 5,
-    role: 'Happy Parent',
+    role: 'Dinner | ₹1,200–1,400',
   },
 ];
 
