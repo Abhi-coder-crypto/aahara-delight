@@ -1,30 +1,32 @@
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from '@/assets/logo.png';
-import heroVideo from '@assets/generated_videos/cinematic_restaurant_interior_with_ambient_lighting.mp4';
+import heroVideo from '@assets/hero_video.mp4';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 bg-leaf-dark">
+      <div className="absolute inset-0 bg-black">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-leaf-dark/60 via-leaf-dark/50 to-leaf-dark/80" />
         
-        {/* Animated background pattern as placeholder */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-champagne/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-leaf-light/30 rounded-full blur-3xl animate-pulse animation-delay-200" />
+        {/* Animated background pattern as placeholder - lower opacity to not distract */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-champagne/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-leaf-light/10 rounded-full blur-3xl animate-pulse animation-delay-200" />
         </div>
       </div>
+
+      {/* Subtle overlay for text readability without being a full "tint" */}
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Floating Decorative Elements */}
       <div className="absolute top-20 right-10 text-6xl opacity-20 animate-float">🌿</div>
