@@ -11,6 +11,13 @@ const menuCategories = [
     description: 'Our signature vegetarian sushi platter.'
   },
   { 
+    name: 'Soups', 
+    image: '/attached_assets/stock_images/vegetable_soup_bowl__4731a9ea.jpg',
+    rawImage: '/attached_assets/stock_images/vegetable_soup_bowl__4731a9ea.jpg',
+    price: '₹199',
+    description: 'Warm, comforting, and packed with garden-fresh vegetables.'
+  },
+  { 
     name: 'Main Course', 
     image: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
     rawImage: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
@@ -64,16 +71,20 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
-              className="perspective-1000"
+              className="perspective-1000 h-[350px] sm:h-[400px]"
               onMouseEnter={() => {
                 setHoveredIndex(index);
                 playSizzle();
               }}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => {
+                setHoveredIndex(hoveredIndex === index ? null : index);
+                if (hoveredIndex !== index) playSizzle();
+              }}
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
