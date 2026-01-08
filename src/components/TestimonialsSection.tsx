@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Right Side: Carousel */}
-          <div className="lg:w-2/3 relative h-[450px] w-full flex items-center justify-center">
+          <div className="lg:w-2/3 relative h-[450px] w-full flex items-center justify-center -mt-12 lg:-mt-20">
             <div className="relative w-full max-w-xl perspective-1000">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === currentIndex;
