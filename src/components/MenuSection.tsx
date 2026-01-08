@@ -183,7 +183,7 @@ const MenuSection = () => {
             href="#contact" 
             className="inline-flex items-center gap-2 text-[#7CB342] font-medium hover:text-[#7CB342]/80 transition-colors"
           >
-            Book a Table for the Full Experience
+            View Digital Menu
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </motion.div>
