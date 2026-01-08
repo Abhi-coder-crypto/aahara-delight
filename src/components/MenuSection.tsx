@@ -14,7 +14,7 @@ const menuCategories = [
     name: 'Soups', 
     image: '/attached_assets/stock_images/vegetable_soup_bowl__4731a9ea.jpg',
     rawImage: '/attached_assets/stock_images/vegetable_soup_bowl__4731a9ea.jpg',
-    price: '₹199',
+    price: '₹149',
     description: 'Warm, comforting, and packed with garden-fresh vegetables.'
   },
   { 
