@@ -71,11 +71,11 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
-              className="perspective-1000 h-[260px] sm:h-[400px]"
+              className="perspective-1000 h-[280px] sm:h-[400px]"
               onClick={() => {
                 setHoveredIndex(hoveredIndex === index ? null : index);
                 if (hoveredIndex !== index) playSizzle();
