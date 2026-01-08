@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/60 backdrop-blur-md py-2'
+          ? 'bg-white/90 backdrop-blur-md py-2 shadow-sm'
           : 'bg-transparent py-4'
       }`}
     >
@@ -50,8 +50,8 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-medium text-sm transition-all duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                  isScrolled ? 'text-white' : 'text-white'
+                className={`font-medium text-sm transition-all duration-300 hover:text-[#7CB342] relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#7CB342] after:transition-all after:duration-300 hover:after:w-full ${
+                  isScrolled ? 'text-[#7CB342]' : 'text-white'
                 }`}
               >
                 {link.name}
