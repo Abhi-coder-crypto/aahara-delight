@@ -34,7 +34,7 @@ const HeroSection = () => {
       <div className="absolute top-1/3 right-1/4 text-4xl opacity-15 animate-float animation-delay-400">🌱</div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-champagne/20 backdrop-blur-sm border border-champagne/30 rounded-full px-5 py-2 animate-fade-up animation-delay-100">
