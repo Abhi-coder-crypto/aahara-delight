@@ -127,9 +127,6 @@ const Footer = () => {
             <p className="text-primary-foreground/60 text-sm">
               © 2024 Aahara – Pure Veg Multi Cuisine. All rights reserved.
             </p>
-            <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-champagne fill-champagne" /> for food lovers
-            </p>
           </div>
         </motion.div>
       </div>
