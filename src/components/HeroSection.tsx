@@ -13,20 +13,11 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        
-        {/* Animated background pattern as placeholder - lower opacity to not distract */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-champagne/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-leaf-light/10 rounded-full blur-3xl animate-pulse animation-delay-200" />
-        </div>
       </div>
-
-      {/* Stronger overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40" />
 
       {/* Floating Decorative Elements */}
       <div className="absolute top-20 right-10 text-6xl opacity-20 animate-float">🌿</div>
@@ -36,12 +27,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-champagne/20 backdrop-blur-sm border border-champagne/30 rounded-full px-5 py-2 animate-fade-up animation-delay-100">
-            <Sparkles className="w-4 h-4 text-champagne" />
-            <span className="text-champagne text-sm font-medium">Est. 2024 • Pure Vegetarian</span>
-          </div>
-
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
             <span className="text-primary italic">A Celebration of</span>
