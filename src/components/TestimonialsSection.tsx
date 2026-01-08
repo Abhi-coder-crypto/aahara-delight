@@ -1,100 +1,158 @@
-import { Star, Quote, Leaf } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, Quote, Leaf, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
 
 const testimonials = [
   {
     name: 'Priya S.',
     text: 'Aahara is a blessing for pure veg lovers! The food is fresh, flavorful, and beautifully presented. The ambience is calm and classy.',
     rating: 5,
+    role: 'Local Guide',
   },
   {
     name: 'Rahul M.',
     text: 'From Indian thali to pizzas and mocktails, everything tasted amazing. Finally, a pure veg multi-cuisine restaurant done right!',
     rating: 5,
+    role: 'Food Blogger',
   },
   {
     name: 'Anita P.',
     text: 'The best vegetarian restaurant in town! Every dish is crafted with love. The paneer tikka and pasta are absolutely divine.',
     rating: 5,
+    role: 'Regular Guest',
+  },
+  {
+    name: 'Vikram R.',
+    text: 'Incredible variety! I brought my non-vegetarian friends and they were blown away by the taste and quality. Highly recommended.',
+    rating: 5,
+    role: 'Verified Customer',
+  },
+  {
+    name: 'Sneha K.',
+    text: 'Perfect for family dinners. The staff is courteous, the service is fast, and the food is consistently delicious. 5 stars!',
+    rating: 5,
+    role: 'Happy Parent',
   },
 ];
 
 const TestimonialsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
   return (
     <section className="section-padding bg-background relative overflow-hidden">
       {/* Background Decorations */}
-      <div className="absolute top-10 left-10 text-6xl opacity-10">🌿</div>
-      <div className="absolute bottom-10 right-10 text-6xl opacity-10">🍃</div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-leaf/5 -skew-x-12 transform origin-top-right" />
+      <div className="absolute bottom-10 left-10 text-9xl opacity-5 select-none">🌿</div>
       
       <div className="container-custom mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 animate-fade-up">
-          <div className="inline-flex items-center gap-2 text-champagne">
-            <Leaf className="w-5 h-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">Testimonials</span>
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground">
-            🌿 Loved by Our <span className="text-leaf">Guests</span>
-          </h2>
-          
-          {/* Gold accent line */}
-          <div className="flex justify-center pt-2">
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-champagne to-transparent rounded-full" />
-          </div>
-          
-          <p className="text-muted-foreground text-lg italic">
-            Real stories. Real flavors. Pure vegetarian happiness.
-          </p>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className="group bg-card rounded-3xl p-8 shadow-soft hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden animate-fade-up"
-              style={{ animationDelay: `${index * 150}ms` }}
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Left Side: Content */}
+          <div className="lg:w-1/3 space-y-6 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 text-leaf bg-leaf/10 px-4 py-2 rounded-full"
             >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                <Quote className="w-12 h-12 text-champagne" />
-              </div>
-              
-              {/* Leaf decoration */}
-              <div className="absolute -bottom-4 -left-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                <Leaf className="w-20 h-20 text-leaf rotate-45" />
-              </div>
-              
-              {/* Rating */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-5 h-5 fill-champagne text-champagne drop-shadow-sm" 
-                  />
-                ))}
-              </div>
-              
-              {/* Quote */}
-              <p className="text-foreground mb-8 leading-relaxed text-base relative z-10">
-                "{testimonial.text}"
-              </p>
-              
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-leaf/20 to-champagne/20 flex items-center justify-center shadow-soft">
-                  <span className="font-display font-bold text-lg text-leaf">
-                    {testimonial.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-semibold text-foreground block">
-                    {testimonial.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground">Happy Guest</span>
-                </div>
-              </div>
+              <Leaf className="w-5 h-5" />
+              <span className="text-sm font-semibold uppercase tracking-wider">Testimonials</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-display text-4xl lg:text-6xl font-bold text-foreground leading-tight"
+            >
+              Loved by Our <span className="text-leaf">Guests</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-muted-foreground text-lg leading-relaxed"
+            >
+              Don't just take our word for it. Here's what our wonderful guests have to say about their experience.
+            </motion.p>
+            
+            <div className="flex justify-center lg:justify-start gap-4 pt-4">
+              <button 
+                onClick={prevSlide}
+                className="w-14 h-14 rounded-full border border-leaf/20 flex items-center justify-center hover:bg-leaf hover:text-white transition-all duration-300"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="w-14 h-14 rounded-full border border-leaf/20 flex items-center justify-center hover:bg-leaf hover:text-white transition-all duration-300"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
-          ))}
+          </div>
+
+          {/* Right Side: Carousel */}
+          <div className="lg:w-2/3 relative h-[450px] w-full flex items-center justify-center">
+            <div className="relative w-full max-w-xl perspective-1000">
+              {testimonials.map((testimonial, index) => {
+                const isActive = index === currentIndex;
+                const isNext = index === (currentIndex + 1) % testimonials.length;
+                const isPrev = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
+                
+                let positionClass = "opacity-0 scale-90 translate-x-0";
+                if (isActive) positionClass = "opacity-100 scale-100 z-30 translate-x-0";
+                if (isNext) positionClass = "opacity-40 scale-90 z-20 translate-x-32 hidden md:block";
+                if (isPrev) positionClass = "opacity-40 scale-90 z-20 -translate-x-32 hidden md:block";
+
+                return (
+                  <motion.div
+                    key={testimonial.name}
+                    className={`absolute top-0 left-0 w-full transition-all duration-700 ease-in-out ${positionClass}`}
+                  >
+                    <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-2xl relative overflow-hidden border border-leaf/5">
+                      <div className="absolute top-0 right-0 p-8 text-leaf/10">
+                        <Quote className="w-24 h-24 rotate-180" />
+                      </div>
+                      
+                      <div className="flex gap-1 mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-6 h-6 fill-champagne text-champagne" />
+                        ))}
+                      </div>
+
+                      <p className="text-xl md:text-2xl text-foreground font-medium mb-10 leading-relaxed italic">
+                        "{testimonial.text}"
+                      </p>
+
+                      <div className="flex items-center gap-5">
+                        <div className="w-16 h-16 rounded-2xl bg-leaf/10 flex items-center justify-center text-leaf font-bold text-2xl shadow-inner">
+                          {testimonial.name.charAt(0)}
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-foreground">{testimonial.name}</h4>
+                          <p className="text-leaf font-medium text-sm">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
