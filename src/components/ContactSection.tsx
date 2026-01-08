@@ -85,7 +85,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Map Side */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -143,7 +143,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="bg-background rounded-2xl shadow-card p-8"
+            className="bg-background rounded-2xl shadow-card p-5 sm:p-8"
           >
             <h3 className="font-display text-2xl font-bold text-foreground mb-2">
               Send us a Message
