@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
+import logo from '@/assets/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,24 +27,20 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-soft py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-background/95 backdrop-blur-md shadow-soft py-2'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-leaf flex items-center justify-center shadow-soft group-hover:shadow-hover transition-shadow duration-300">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-display text-xl font-bold transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                Aahara
-              </span>
-              <span className={`text-[10px] tracking-wider uppercase transition-colors duration-300 ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
-                Multi Cuisine
-              </span>
+          <a href="#home" className="flex items-center group">
+            <div className={`rounded-full overflow-hidden shadow-soft group-hover:shadow-hover transition-all duration-300 ${isScrolled ? 'w-14 h-14' : 'w-16 h-16'}`}>
+              <img 
+                src={logo} 
+                alt="Aahara - Multi Cuisine Restaurant" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </a>
 

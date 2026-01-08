@@ -1,19 +1,20 @@
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
-import heroBg from '@/assets/hero-bg.jpg';
+import logo from '@/assets/logo.png';
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Delicious vegetarian cuisine"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-leaf-dark/80 via-leaf-dark/70 to-leaf-dark/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-leaf-dark/50 to-transparent" />
+      {/* Video Background Placeholder - Replace with your video */}
+      <div className="absolute inset-0 bg-leaf-dark">
+        {/* When you have the video file, it will play here */}
+        <div className="absolute inset-0 bg-gradient-to-b from-leaf-dark/60 via-leaf-dark/50 to-leaf-dark/80" />
+        
+        {/* Animated background pattern as placeholder */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-champagne/30 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-leaf-light/30 rounded-full blur-3xl animate-pulse animation-delay-200" />
+        </div>
       </div>
 
       {/* Floating Decorative Elements */}
@@ -24,18 +25,27 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Logo */}
+          <div className="flex justify-center animate-fade-up">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-gold border-4 border-champagne/30 animate-float">
+              <img 
+                src={logo} 
+                alt="Aahara Logo" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-champagne/20 backdrop-blur-sm border border-champagne/30 rounded-full px-5 py-2 animate-fade-up">
+          <div className="inline-flex items-center gap-2 bg-champagne/20 backdrop-blur-sm border border-champagne/30 rounded-full px-5 py-2 animate-fade-up animation-delay-100">
             <Sparkles className="w-4 h-4 text-champagne" />
             <span className="text-champagne text-sm font-medium">Est. 2024 • Pure Vegetarian</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100">
-            Aahara
-            <span className="block text-champagne mt-2 text-3xl sm:text-4xl lg:text-5xl font-normal italic">
-              A Celebration of Pure Vegetarian Flavours
-            </span>
+            <span className="text-champagne italic">A Celebration of</span>
+            <span className="block mt-2">Pure Vegetarian Flavours</span>
           </h1>
 
           {/* Subtitle */}
