@@ -51,7 +51,7 @@ const MenuSection = () => {
 
   return (
     <section id="menu" className="section-padding bg-background overflow-hidden">
-      <div className="container-custom mx-auto">
+      <div className="container-custom mx-auto px-1 sm:px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2 sm:gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
@@ -99,10 +99,10 @@ const MenuSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 animate={hoveredIndex === index ? { rotateY: 180 } : { rotateY: 0 }}
                 style={{ transformStyle: 'preserve-3d' }}
-                className="group relative h-full cursor-pointer"
+                className="group relative h-full w-full cursor-pointer"
               >
                 {/* Front Side: Cooking Animation */}
-                <div className="absolute inset-0 backface-hidden rounded-2xl sm:rounded-3xl overflow-hidden shadow-card">
+                <div className="absolute inset-0 backface-hidden rounded-2xl sm:rounded-3xl overflow-hidden shadow-card w-full">
                   <motion.div 
                     className="relative w-full h-full"
                     animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
