@@ -1,20 +1,54 @@
-import { motion } from 'framer-motion';
-import { ChefHat } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChefHat, Flame } from 'lucide-react';
+import { useState } from 'react';
 
 const menuCategories = [
-  { name: 'Soups', image: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg' },
-  { name: 'Appetizers', image: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg' },
-  { name: 'Main Course', image: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg' },
-  { name: 'Pastas', image: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg' },
-  { name: 'Pizza', image: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg' },
-  { name: 'Thali', image: '/attached_assets/stock_images/indian_thali_pure_ve_ade217ca.jpg' },
-  { name: 'Sushi', image: '/attached_assets/stock_images/vegetarian_sushi_pla_c23ae6d7.jpg' },
-  { name: 'Snacks', image: '/attached_assets/stock_images/crispy_indian_street_e40bf0c9.jpg' },
-  { name: 'Mocktails', image: '/attached_assets/stock_images/fruit_mocktail_bever_085db329.jpg' },
-  { name: 'Desserts', image: '/attached_assets/stock_images/gourmet_dessert_vege_71097217.jpg' },
+  { 
+    name: 'Soups', 
+    image: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg',
+    rawImage: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg', // Placeholder for raw
+    price: '₹180',
+    description: 'Fresh seasonal vegetables simmered to perfection.'
+  },
+  { 
+    name: 'Appetizers', 
+    image: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
+    rawImage: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg',
+    price: '₹250',
+    description: 'Crispy starters with a burst of flavor.'
+  },
+  { 
+    name: 'Main Course', 
+    image: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
+    rawImage: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg',
+    price: '₹350',
+    description: 'Hearty vegetarian delights from our chef.'
+  },
+  { 
+    name: 'Pastas', 
+    image: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg',
+    rawImage: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg',
+    price: '₹280',
+    description: 'Authentic Italian flavors with fresh herbs.'
+  },
+  { 
+    name: 'Pizza', 
+    image: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg',
+    rawImage: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg',
+    price: '₹320',
+    description: 'Thin crust with garden-fresh toppings.'
+  },
 ];
 
 const MenuSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const playSizzle = () => {
+    const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+    audio.volume = 0.2;
+    audio.play().catch(() => {}); // Ignore autoplay blocks
+  };
+
   return (
     <section id="menu" className="section-padding bg-background overflow-hidden">
       <div className="container-custom mx-auto">
@@ -25,49 +59,113 @@ const MenuSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16 space-y-4"
         >
-          <div className="inline-flex items-center gap-2 text-champagne">
+          <div className="inline-flex items-center gap-2 text-[#7CB342]">
             <ChefHat className="w-5 h-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">Our Menu</span>
+            <span className="text-sm font-semibold uppercase tracking-wider">Live Kitchen Experience</span>
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground">
-            A World of <span className="text-leaf">Flavours</span>
+            From Farm to <span className="text-[#7CB342]">Plate</span>
           </h2>
           <p className="text-muted-foreground">
-            Explore our curated selection of 10 signature categories, 
-            each prepared with the finest vegetarian ingredients.
+            Hover over a dish to see it cook! Swipe to flip through our signature creations.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {menuCategories.map((category, index) => (
-            <motion.div
+            <div
               key={category.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative bg-card rounded-2xl sm:rounded-3xl shadow-card overflow-hidden cursor-pointer"
+              className="perspective-1000"
+              onMouseEnter={() => {
+                setHoveredIndex(index);
+                playSizzle();
+              }}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="aspect-[4/5] relative">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                
-                <div className="absolute inset-0 flex flex-col items-center justify-end p-4 sm:p-6">
-                  <motion.h3 
-                    className="font-display text-lg sm:text-2xl text-white font-bold tracking-wide"
-                    whileHover={{ scale: 1.1 }}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                animate={hoveredIndex === index ? { rotateY: 180 } : { rotateY: 0 }}
+                style={{ transformStyle: 'preserve-3d' }}
+                className="group relative h-[400px] cursor-pointer"
+              >
+                {/* Front Side: Cooking Animation */}
+                <div className="absolute inset-0 backface-hidden rounded-3xl overflow-hidden shadow-card">
+                  <motion.div 
+                    className="relative w-full h-full"
+                    animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
                   >
-                    {category.name}
-                  </motion.h3>
-                  <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-leaf mt-1 sm:mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    {/* Steam/Smoke Overlay */}
+                    <AnimatePresence>
+                      {hoveredIndex === index && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 0.4 }}
+                          exit={{ opacity: 0 }}
+                          className="absolute inset-0 bg-gradient-to-t from-[#7CB342]/40 to-transparent"
+                        >
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <motion.div
+                              animate={{ 
+                                y: [-20, -100], 
+                                opacity: [0, 1, 0],
+                                scale: [1, 1.5]
+                              }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            >
+                              <Flame className="w-12 h-12 text-white/50 blur-sm" />
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    
+                    <div className="absolute inset-0 flex flex-col items-center justify-end p-6">
+                      <h3 className="font-display text-2xl text-white font-bold tracking-wide">
+                        {category.name}
+                      </h3>
+                      {/* Elastic Price Tag */}
+                      <motion.div
+                        className="bg-[#7CB342] text-white px-3 py-1 rounded-full text-sm font-bold mt-2"
+                        animate={hoveredIndex === index ? {
+                          scale: [1, 1.2, 1],
+                          rotate: [0, 5, -5, 0]
+                        } : {}}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {category.price}
+                      </motion.div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Back Side: Chef Toss Flip */}
+                <div 
+                  className="absolute inset-0 backface-hidden rounded-3xl overflow-hidden bg-[#7CB342] p-8 flex flex-col justify-center items-center text-center text-white"
+                  style={{ transform: 'rotateY(180deg)' }}
+                >
+                  <motion.div
+                    animate={hoveredIndex === index ? { y: [0, -20, 0] } : {}}
+                    transition={{ duration: 0.5, repeat: Infinity }}
+                  >
+                    <ChefHat className="w-12 h-12 mb-4" />
+                  </motion.div>
+                  <h3 className="font-display text-2xl font-bold mb-2">{category.name}</h3>
+                  <p className="text-white/90 text-sm">{category.description}</p>
+                  <div className="mt-6 font-bold text-xl tracking-wider">{category.price}</div>
+                </div>
+              </motion.div>
+            </div>
           ))}
         </div>
 
@@ -79,17 +177,26 @@ const MenuSection = () => {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground mb-4">
-            Want to see the full menu? 🍽️
+            Experience our 100% Pure Veg Multi-Cuisine! 🍽️
           </p>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 text-leaf font-medium hover:text-leaf-dark transition-colors"
+            className="inline-flex items-center gap-2 text-[#7CB342] font-medium hover:text-[#7CB342]/80 transition-colors"
           >
-            Get the digital menu
+            Book a Table for the Full Experience
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </motion.div>
       </div>
+      <style>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+      `}</style>
     </section>
   );
 };
