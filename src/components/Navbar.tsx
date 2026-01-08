@@ -57,8 +57,8 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="gold" size="sm">
-              Book a Table
+            <Button variant="gold" size="sm" asChild>
+              <a href="#contact">Book a Table</a>
             </Button>
           </div>
 
@@ -90,8 +90,8 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="gold" className="w-full mt-4">
-              Book a Table
+            <Button variant="gold" className="w-full mt-4" asChild>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Book a Table</a>
             </Button>
           </div>
         </div>
