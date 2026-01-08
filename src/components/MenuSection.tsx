@@ -76,14 +76,20 @@ const MenuSection = () => {
             <div
               key={category.name}
               className="perspective-1000 h-[300px] sm:h-[400px]"
-              onMouseEnter={() => {
-                setHoveredIndex(index);
-                playSizzle();
-              }}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => {
                 setHoveredIndex(hoveredIndex === index ? null : index);
                 if (hoveredIndex !== index) playSizzle();
+              }}
+              onMouseEnter={() => {
+                if (window.innerWidth >= 1024) {
+                  setHoveredIndex(index);
+                  playSizzle();
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth >= 1024) {
+                  setHoveredIndex(null);
+                }
               }}
             >
               <motion.div
