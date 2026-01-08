@@ -1,4 +1,5 @@
 import { Leaf, Instagram, Facebook, Twitter, Youtube, Heart } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -22,14 +23,18 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-champagne/20 flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-champagne" />
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-full overflow-hidden shadow-gold border-2 border-champagne/30">
+                <img 
+                  src={logo} 
+                  alt="Aahara Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold">Aahara</h3>
                 <p className="text-xs text-primary-foreground/60 uppercase tracking-wider">
-                  Pure Veg Multi Cuisine
+                  Pure Veg Multi Cuisine • Est. 2024
                 </p>
               </div>
             </div>
