@@ -1,48 +1,30 @@
-import { 
-  Soup, Salad, Pizza, UtensilsCrossed, Flame, 
-  Sandwich, Coffee, Cookie, IceCream, Wine, 
-  Wheat, Leaf, ChefHat, Sparkles
-} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ChefHat } from 'lucide-react';
 
 const menuCategories = [
-  { name: 'Soups', icon: Soup },
-  { name: 'Salads', icon: Salad },
-  { name: 'Bruschetta', icon: Wheat },
-  { name: 'Nachos', icon: Flame },
-  { name: 'Appetizers', icon: UtensilsCrossed },
-  { name: 'Garlic Bread', icon: Wheat },
-  { name: 'Burgers', icon: Sandwich },
-  { name: 'Specials', icon: Sparkles },
-  { name: 'Lebanese Lane', icon: Leaf },
-  { name: 'Crinkle Fries', icon: Flame },
-  { name: 'Pizza', icon: Pizza },
-  { name: 'Pastas', icon: UtensilsCrossed },
-  { name: 'Sushi', icon: ChefHat },
-  { name: 'Noodles', icon: UtensilsCrossed },
-  { name: 'Indian Tandoor', icon: Flame },
-  { name: 'Chinese', icon: UtensilsCrossed },
-  { name: 'Papad & Raita', icon: Leaf },
-  { name: 'Indian Breads', icon: Wheat },
-  { name: 'Main Course', icon: ChefHat },
-  { name: 'Rice & Biryanis', icon: Wheat },
-  { name: 'Pot Rice', icon: Flame },
-  { name: 'Chinese Rice', icon: UtensilsCrossed },
-  { name: 'Thali', icon: ChefHat },
-  { name: 'Pav Bhaji', icon: Flame },
-  { name: 'Shakes', icon: Coffee },
-  { name: 'Mojito', icon: Wine },
-  { name: 'Mocktails', icon: Wine },
-  { name: 'Waffles', icon: Cookie },
-  { name: 'Desserts', icon: IceCream },
-  { name: 'Beverages', icon: Coffee },
+  { name: 'Soups', image: '/attached_assets/stock_images/vegetable_soup_bowl_c68632f9.jpg' },
+  { name: 'Appetizers', image: '/attached_assets/stock_images/vegetarian_food_indi_82247506.jpg' },
+  { name: 'Main Course', image: '/attached_assets/stock_images/vegetarian_main_cour_d15eb3da.jpg' },
+  { name: 'Pastas', image: '/attached_assets/stock_images/italian_vegetarian_p_ac192e1e.jpg' },
+  { name: 'Pizza', image: '/attached_assets/stock_images/vegetarian_pizza_gou_4e5e8984.jpg' },
+  { name: 'Thali', image: '/attached_assets/stock_images/indian_thali_pure_ve_ade217ca.jpg' },
+  { name: 'Sushi', image: '/attached_assets/stock_images/vegetarian_sushi_pla_c23ae6d7.jpg' },
+  { name: 'Snacks', image: '/attached_assets/stock_images/indian_street_food_s_aad51677.jpg' },
+  { name: 'Mocktails', image: '/attached_assets/stock_images/fruit_mocktail_bever_085db329.jpg' },
+  { name: 'Desserts', image: '/attached_assets/stock_images/gourmet_dessert_vege_71097217.jpg' },
 ];
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="section-padding bg-background">
+    <section id="menu" className="section-padding bg-background overflow-hidden">
       <div className="container-custom mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 animate-fade-up">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-16 space-y-4"
+        >
           <div className="inline-flex items-center gap-2 text-champagne">
             <ChefHat className="w-5 h-5" />
             <span className="text-sm font-semibold uppercase tracking-wider">Our Menu</span>
@@ -51,51 +33,62 @@ const MenuSection = () => {
             A World of <span className="text-leaf">Flavours</span>
           </h2>
           <p className="text-muted-foreground">
-            Explore our diverse menu featuring cuisines from around the globe, 
-            all crafted with pure vegetarian ingredients.
+            Explore our curated selection of 10 signature categories, 
+            each prepared with the finest vegetarian ingredients.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Menu Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {menuCategories.map((category, index) => (
-            <div
+            <motion.div
               key={category.name}
-              className="group relative bg-card rounded-2xl p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden animate-fade-up"
-              style={{ animationDelay: `${index * 30}ms` }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+              className="group relative bg-card rounded-3xl shadow-card overflow-hidden cursor-pointer"
             >
-              {/* Background Gradient on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-leaf/10 to-champagne/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              {/* Content */}
-              <div className="relative z-10 flex flex-col items-center text-center gap-3">
-                <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center group-hover:bg-leaf group-hover:text-primary-foreground transition-all duration-300">
-                  <category.icon className="w-7 h-7" />
+              <div className="aspect-[4/5] relative">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                
+                <div className="absolute inset-0 flex flex-col items-center justify-end p-6">
+                  <motion.h3 
+                    className="font-display text-2xl text-white font-bold tracking-wide"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {category.name}
+                  </motion.h3>
+                  <div className="w-12 h-1 bg-leaf mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </div>
-                <h3 className="font-medium text-sm text-foreground group-hover:text-leaf transition-colors duration-300">
-                  {category.name}
-                </h3>
               </div>
-
-              {/* Corner Decoration */}
-              <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-champagne/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12 animate-fade-up animation-delay-400">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+          className="text-center mt-12"
+        >
           <p className="text-muted-foreground mb-4">
-            Can't decide? Let us surprise you with our Chef's Special! 🌟
+            Want to see the full menu? 🍽️
           </p>
           <a 
             href="#contact" 
             className="inline-flex items-center gap-2 text-leaf font-medium hover:text-leaf-dark transition-colors"
           >
-            Ask for recommendations
+            Get the digital menu
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
