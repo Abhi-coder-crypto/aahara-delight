@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Leaf, Heart, Utensils, Sparkles, Users, ShieldCheck } from 'lucide-react';
 
 const highlights = [
@@ -9,11 +10,17 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-gradient-soft">
+    <section id="about" className="section-padding bg-gradient-soft overflow-hidden">
       <div className="container-custom mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
-          <div className="relative animate-fade-up">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
             <div className="relative rounded-3xl overflow-hidden shadow-card">
               <img
                 src="/about-biryani.jpg"
@@ -24,7 +31,13 @@ const AboutSection = () => {
             </div>
             
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-background rounded-2xl shadow-card p-6 max-w-[200px] animate-float">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="absolute -bottom-6 -right-6 bg-background rounded-2xl shadow-card p-6 max-w-[200px]"
+            >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-champagne/20 rounded-full flex items-center justify-center">
                   <Heart className="w-6 h-6 text-champagne" />
@@ -34,14 +47,20 @@ const AboutSection = () => {
                   <p className="text-xs text-muted-foreground">Established</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Decorative Element */}
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-leaf/10 rounded-full blur-2xl" />
-          </div>
+          </motion.div>
 
           {/* Content Side */}
-          <div className="space-y-8 animate-fade-up animation-delay-200">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-8"
+          >
             {/* Section Header */}
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 text-champagne">
@@ -67,28 +86,27 @@ const AboutSection = () => {
                 Italian pastas, from crispy Chinese stir-fries to hearty Mexican nachos — 
                 every dish is crafted with love, using the freshest ingredients.
               </p>
-              <p>
-                At Aahara, we believe that vegetarian food isn't just about what you leave out — 
-                it's about celebrating the incredible variety nature offers us.
-              </p>
             </div>
 
             {/* Highlights Grid */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               {highlights.map((item, index) => (
-                <div
+                <motion.div
                   key={item.text}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 p-4 bg-background rounded-xl shadow-soft hover:shadow-hover transition-shadow duration-300 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className={`w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color}`}>
                     <item.icon className="w-5 h-5" />
                   </div>
                   <span className="font-medium text-foreground text-sm">{item.text}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

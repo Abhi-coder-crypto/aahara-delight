@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Leaf, Instagram, Facebook, Twitter, Youtube, Heart } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
@@ -18,9 +19,15 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-leaf-dark text-primary-foreground">
+    <footer className="bg-leaf-dark text-primary-foreground overflow-hidden">
       <div className="container-custom mx-auto section-padding pb-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-4">
@@ -47,14 +54,15 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
-                <a
+                <motion.a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  whileHover={{ y: -5, scale: 1.1 }}
                   className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-champagne hover:text-foreground transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -108,10 +116,15 @@ const Footer = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-primary-foreground/10">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="pt-8 border-t border-primary-foreground/10"
+        >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
               © 2024 Aahara – Pure Veg Multi Cuisine. All rights reserved.
@@ -120,7 +133,7 @@ const Footer = () => {
               Made with <Heart className="w-4 h-4 text-champagne fill-champagne" /> for food lovers
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

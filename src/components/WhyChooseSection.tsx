@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Leaf, Utensils, Sparkles, Home, Wallet, ShieldCheck, Clock } from 'lucide-react';
+import { Leaf, Utensils, Sparkles, ShieldCheck } from 'lucide-react';
 
 const reasons = [
   {
@@ -19,18 +19,6 @@ const reasons = [
     title: 'Hygienic & Fresh',
     description: 'We source the freshest produce daily for authentic taste and health.',
     color: 'bg-blue-50 text-blue-600',
-  },
-  {
-    icon: Home,
-    title: 'Warm Ambience',
-    description: 'A cozy, welcoming space perfect for families and celebrations.',
-    color: 'bg-purple-50 text-purple-600',
-  },
-  {
-    icon: Clock,
-    title: 'Fast Service',
-    description: 'Enjoy your favorite meals served fresh and quick by our experts.',
-    color: 'bg-amber-50 text-amber-600',
   },
 ];
 
@@ -68,29 +56,28 @@ const WhyChooseSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: index * 0.2, duration: 0.7, ease: "easeOut" }}
               whileHover={{ y: -12 }}
-              className="relative group p-8 rounded-[2rem] bg-white shadow-soft hover:shadow-hover transition-all duration-500 text-center"
+              className="relative group p-10 rounded-[2.5rem] bg-white shadow-soft hover:shadow-hover transition-all duration-500 text-center"
             >
-              <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl ${reason.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                <reason.icon className="w-10 h-10" />
+              <div className={`w-24 h-24 mx-auto mb-8 rounded-3xl ${reason.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
+                <reason.icon className="w-12 h-12" />
               </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
                 {reason.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 {reason.description}
               </p>
               
-              {/* Decorative background element */}
-              <div className="absolute inset-0 bg-leaf/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none" />
+              <div className="absolute inset-0 bg-leaf/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem] pointer-events-none" />
             </motion.div>
           ))}
         </div>
