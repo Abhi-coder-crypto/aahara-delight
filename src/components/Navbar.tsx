@@ -58,7 +58,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="gold" size="sm" asChild>
-              <a href="#menu">View Digital Menu</a>
+              <a href="#contact">Book a Table</a>
             </Button>
           </div>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="gold" className="w-full mt-4" asChild>
-              <a href="#menu" onClick={() => setIsMobileMenuOpen(false)}>View Digital Menu</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Book a Table</a>
             </Button>
           </div>
         </div>
