@@ -71,11 +71,11 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6">
           {menuCategories.map((category, index) => (
             <div
               key={category.name}
-              className="perspective-1000 h-[300px] sm:h-[400px]"
+              className="perspective-1000 h-[260px] sm:h-[400px]"
               onClick={() => {
                 setHoveredIndex(hoveredIndex === index ? null : index);
                 if (hoveredIndex !== index) playSizzle();
@@ -142,12 +142,12 @@ const MenuSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     
                     <div className="absolute inset-0 flex flex-col items-center justify-end p-4 sm:p-6 text-center">
-                      <h3 className="font-display text-lg sm:text-2xl text-white font-bold tracking-wide leading-tight">
+                      <h3 className="font-display text-base sm:text-2xl text-white font-bold tracking-wide leading-tight">
                         {category.name}
                       </h3>
                       {/* Elastic Price Tag */}
                       <motion.div
-                        className="bg-[#7CB342] text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold mt-1 sm:mt-2"
+                        className="bg-[#7CB342] text-white px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-sm font-bold mt-1 sm:mt-2"
                         animate={hoveredIndex === index ? {
                           scale: [1, 1.2, 1],
                           rotate: [0, 5, -5, 0]

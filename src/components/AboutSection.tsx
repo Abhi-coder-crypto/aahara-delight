@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { Leaf, Heart, Utensils, Sparkles, Users, ShieldCheck } from 'lucide-react';
 
 const highlights = [
-  { icon: "/attached_assets/stock_images/pure_veg_icon.png", text: '100% Pure Veg', color: 'bg-green-50' },
-  { icon: "/attached_assets/stock_images/global_cuisine_icon.png", text: 'Multi Cuisine', color: 'bg-orange-50' },
-  { icon: "/attached_assets/stock_images/family_icon.png", text: 'Family Friendly', color: 'bg-green-50' },
-  { icon: "/attached_assets/stock_images/hygiene_icon.png", text: 'Hygienic & Fresh', color: 'bg-orange-50' },
+  { icon: "/assets/veg-icon.png", text: '100% Pure Veg', color: 'bg-green-50' },
+  { icon: "/assets/cuisine-icon.png", text: 'Multi Cuisine', color: 'bg-orange-50' },
+  { icon: "/assets/family-icon.png", text: 'Family Friendly', color: 'bg-green-50' },
+  { icon: "/assets/hygiene-icon.png", text: 'Hygienic & Fresh', color: 'bg-orange-50' },
 ];
 
 const AboutSection = () => {
